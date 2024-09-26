@@ -1,3 +1,3 @@
-console.log("Apenas testando");
-console.log('--------------------------------');
-console.log('UmaPalace');
+console.log(typeof "Apenas testando");
+console.log(typeof '--------------------------------');
+console.log(typeof 'UmaPalace');
