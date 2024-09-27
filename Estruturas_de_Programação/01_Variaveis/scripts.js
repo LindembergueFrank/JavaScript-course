@@ -18,3 +18,8 @@ console.log(quantity);
 
 let a = 3, b = 5, c = 2;
 console.log(a + b + c);
+
+console.log("--------- CONST -----------");
+
+const ip = "127.0.0.1";
+console.log(ip);
