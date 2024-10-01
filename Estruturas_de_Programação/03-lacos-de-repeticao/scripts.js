@@ -30,4 +30,9 @@ console.log("\nFOR\n");
 
 for(let j = 0; j < 5; j++) {
     console.log("Valor de j: " + j);
+    if(j + 7 == 10) {
+        console.log("Sai do laço FOR, pois a somatória de 7 + " + j + " = 10");
+        break;
+    }
+    console.log("-----");
 }
