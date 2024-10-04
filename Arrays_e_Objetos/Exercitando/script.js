@@ -48,3 +48,20 @@ console.log("Array depois do push:" + array + "\nComprimento do array: " + array
 
 let array3 = array.pop();
 console.log("Removendo o último elemento do array com pop: " + array + "\nValor do elemento removido: " + array3);
+
+let array4 = array.shift();
+console.log("Removendo o primeiro do array: " + array + "\nValor do primeiro elemento removido: " + array4);
+
+let array5 = array.unshift(0, -1, -2, 1);
+
+console.log("Array depois do unshift: " + array + "\nComprimento do array: " + array5);
+
+console.log("Indíce do número '6': " + array.indexOf(6));
+console.log("Retorna '-1' quando não encontra o valor de busca: " + array.indexOf(11));
+
+console.log("Indíce do numero '6': " + array.lastIndexOf(3, 5));
+
+console.log("Array original atual: " + array);
+arrayCopia = array.slice(0, array.length);
+
+console.log("Array copia: " + arrayCopia);
