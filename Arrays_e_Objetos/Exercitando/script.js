@@ -91,4 +91,10 @@ console.log("\nString atual: " + novaString);
 let stringSplit = novaString.split(" ");
 
 console.log("\Palavras contidas na string separadas por ' ' atual: " + stringSplit);
+console.log("Trocando espacos por '-': " + stringSplit.join("-"));
+console.log(stringSplit.join(" "));
+
+let stringRepeat = novaString.repeat(2);
+
+console.log("\nString repetida duas vezes: " + stringRepeat);
 
