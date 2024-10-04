@@ -65,3 +65,30 @@ console.log("Array original atual: " + array);
 arrayCopia = array.slice(0, array.length);
 
 console.log("Array copia: " + arrayCopia);
+
+console.log("Utilizando o foreach:")
+array.forEach(numero => console.log(numero));
+
+console.log("Usando 'includes' para verificar se há o valor 11 no array: " + array.includes(11));
+console.log("Array original: " + array);
+console.log("Array reverso: " + array.reverse());
+
+console.log("\n Alguns metodos de string\n");
+
+let string = "    Matheus      ";
+
+console.log("\nString original: " + string);
+stringSemEspacos = string.trim();
+console.log("Removendo espaços do array de Strings: " + stringSemEspacos);
+
+console.log("Preenchendo uma string com '-' no começo da string: " + stringSemEspacos.padStart(30, "-"));
+console.log("Preenchendo uma string com '-' no final da string: " + stringSemEspacos.padEnd(30, "-"));
+
+let novaString = "Uma string com varios espacos ";
+
+console.log("\nString atual: " + novaString);
+
+let stringSplit = novaString.split(" ");
+
+console.log("\Palavras contidas na string separadas por ' ' atual: " + stringSplit);
+
