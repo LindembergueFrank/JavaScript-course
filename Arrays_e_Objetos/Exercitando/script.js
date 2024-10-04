@@ -23,3 +23,15 @@ console.log(pessoa);
 
 console.log("Buscando as chaves do objeto pessoa:\n");
 console.log(Object.keys(pessoa));
+
+console.log("--------------------------------\n");
+
+console.log("Removendo a chave 'cor' do objeto 'pessoa':\n");
+delete pessoa.cor;
+
+console.log(pessoa);
+
+console.log("Adicionando a chave 'cor' do objeto 'pessoa':\n");
+
+pessoa.cor = "Negro";
+console.log(pessoa);
