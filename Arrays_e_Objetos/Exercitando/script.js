@@ -98,3 +98,34 @@ let stringRepeat = novaString.repeat(2);
 
 console.log("\nString repetida duas vezes: " + stringRepeat);
 
+console.log("-------------");
+
+let n1 =5, n2 = 4, n3 = 7, n4 = 9;
+
+function variosParametros(...args) {
+    for (let i = 0; i < args.length; i++) {
+        console.log(args[i]);
+    }
+}
+
+console.log("Função número de argumentos indetermidados:");
+variosParametros(n1, n2, n3, n4);
+console.log("----------------");
+variosParametros(n1, n4);
+
+console.log("\nExtraindo dados de um objeto com destructing");
+
+let nomeSobrenome = {
+    nome: "Matheus",
+    sobrenome: "Cocao",
+};
+
+let {nome: meuNome, sobrenome: meuSobrenome} = nomeSobrenome;
+console.log(meuNome + " " + meuSobrenome);
+
+console.log("\nExtraindo dados de um array com destructing");
+let arrayNovo = ["Mathias", "Marcos", "Zara", "Fein"];
+
+let [primeiroNome, segundoNome, terceiroNome, quartoNome] = arrayNovo;
+
+console.log(primeiroNome + " " + segundoNome + " " + terceiroNome + " " + quartoNome);
