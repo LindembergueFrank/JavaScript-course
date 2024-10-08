@@ -39,7 +39,7 @@ class carrinhoDeCompras {
     
     adicionarItem(itens, quantidade, valor) {
 
-        for(let i=0; i<quantidade; i++) {
+        for(let i=0; i<itens.lenght; i++) {
             this.itens.push(itens);
             this.quantidade++;
         }
@@ -94,7 +94,6 @@ let itensAdicionados = [
     }
 ]
 
-carrinho.removerItem(itensAdicionados, 2, 300);
 console.log("----------------------------");
 carrinho.adicionarItem(itensAdicionados, 2, 300);
 console.log(carrinho);
