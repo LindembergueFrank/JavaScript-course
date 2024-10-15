@@ -94,3 +94,37 @@ console.log(carrinho);
 
 carrinho.removerItem({codigo: 3, nome: "Short", quantidade: 2, preco: 150});
 console.log(carrinho);
+
+console.log("\nQuestion 3");
+
+class EnderecoCliente {
+    constructor(rua, bairro, cidade, estado) {
+        this.rua = rua;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+    }
+    
+    get EnderecoClienteFormatado() {
+        return `${this.rua}, ${this.bairro}, ${this.cidade} - ${this.estado}`;
+    }
+
+    set newRua(newRua) {
+        this.rua = newRua;
+    }
+
+    set newBairro(newBairro) {
+        this.bairro = newBairro;
+    }
+
+    set newCidade(newCidade) {
+        this.cidade = newCidade;
+    }
+
+    set newEstado(newEstado) {
+        this.estado = newEstado;
+    }
+}
+
+let endereco = new EnderecoCliente("Rua dos Bobos", "Bairro do Meio", "São Paulo", "SP");
+console.log(endereco.EnderecoClienteFormatado());
