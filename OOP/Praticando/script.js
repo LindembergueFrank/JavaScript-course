@@ -129,3 +129,41 @@ endereco.newRua = "Rua das Flores";
 endereco.newCidade = "Cidade Jardim";
 
 console.log(endereco);
+
+console.log("\nQuestion 4");
+
+class Carro {
+    constructor(marca, cor, gasolinaRestante) {
+        this.marca = marca;
+        this.cor = cor;
+        this.gasolinaRestante = gasolinaRestante;
+    }
+
+    dirigirCarro(dirigindo) {
+        while (dirigindo == true) {
+            this.gasolinaRestante -= 3;
+            if (this.gasolinaRestante <= 20) {
+                console.log("Atenção! Gasolina acabando, reabasteça!");
+                dirigindo = false;
+
+            }
+        }
+    }
+
+    abastecerCarro (dirigindo) {
+        if (dirigindo == true && this.gasolinaRestante <= 20) {
+            this.gasolinaRestante = 100;
+            console.log("Carro abastecido com sucesso!");
+        }
+    }
+}
+
+let carro = new Carro("Fiat", "Prata", 50);
+
+console.log(carro);
+
+carro.dirigirCarro(true);
+
+console.log(carro);
+carro.abastecerCarro(true); 
+console.log(carro);
