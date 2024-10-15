@@ -167,3 +167,93 @@ carro.dirigirCarro(true);
 console.log(carro);
 carro.abastecerCarro(true); 
 console.log(carro);
+
+console.log("\nQuestion 4");
+
+class ContaBanco {
+    constructor(saldoContaCorrente, saldoContaPoupanca, jurosPoupanca) {
+        this.saldoContaCorrente = saldoContaCorrente;
+        this.saldoContaPoupanca = saldoContaPoupanca;
+        this.jurosPoupanca = jurosPoupanca;
+    }
+
+    depositarCont(tipoDeConta, saldo) {
+        if (tipoDeConta == "CC") {
+            this.saldoContaCorrente += saldo;
+            console.log(`Depositado na conta corrente: ${saldo}`);
+        } else if (tipoDeConta == "CP"){
+            this.saldoContaPoupanca += saldo;
+            console.log(`Depositado na conta poupança: ${saldo}`);
+        }
+    }
+    
+    sacarCont(tipoDeConta, saldo) {
+        if (tipoDeConta == "CC") {
+            if(this.saldoContaCorrente >= saldo) {
+                this.saldoContaCorrente -= saldo;
+                console.log(`Saque na conta corrente: ${saldo}`);
+            } else {
+                console.log("Saldo insuficiente na conta corrente!");
+            }
+        } else {
+            if(this.saldoContaPoupanca >= saldo) {
+                this.saldoContaPoupanca -= saldo;
+                console.log(`Saque na conta poupança: ${saldo}`);
+            } else {
+                console.log("Saldo insuficiente na conta poupança!");
+            }
+        }
+    }
+
+    transferMoney(contaDestino, saldo){
+        if(contaDestino == "CC") {
+            this.saldoContaPoupanca -= saldo;
+            this.depositarCont(contaDestino, saldo);
+        } else if (contaDestino == "CP"){
+            this.saldoContaCorrente -= saldo;
+            this.depositarCont(contaDestino, saldo);
+        } else {
+            console.log("Conta de destino inválida!");
+        }
+    }
+
+    jurosDeAniversario() {
+        let juros = (this.saldoContaPoupanca * this.jurosPoupanca) / 100;
+        this.saldoContaPoupanca += juros;
+    }
+}
+
+class SpecialAccount extends ContaBanco {
+    constructor(saldoCC, saldoCP, juros) {
+        super(saldoCC, saldoCP, juros*2);
+    }
+}
+
+
+let contaBanco1 = new ContaBanco(500, 1000, 1);
+console.log(contaBanco1);
+
+contaBanco1.depositarCont("CC", 200);
+console.log(contaBanco1);
+
+contaBanco1.depositarCont("CP", 350);
+console.log(contaBanco1);
+
+contaBanco1.sacarCont("CC", 150);
+console.log(contaBanco1);
+
+contaBanco1.sacarCont("CP", 400)
+console.log(contaBanco1);
+
+contaBanco1.transferMoney("CC", 100);
+console.log(contaBanco1);
+
+contaBanco1.jurosDeAniversario();
+console.log(contaBanco1);
+
+let specialAccount1 = new SpecialAccount(12000, 250000, 1);
+console.log("-----------");
+console.log(specialAccount1);
+
+specialAccount1.sacarCont("CP",5000);
+console.log(specialAccount1);
