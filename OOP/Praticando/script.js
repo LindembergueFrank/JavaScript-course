@@ -37,27 +37,35 @@ class carrinhoDeCompras {
         this.valorTotal = valorTotal;
     }
     
-    adicionarItem(itens, quantidade, valor) {
+    adicionarItem(item) {
+        let contador = 0;
 
-        for(let i=0; i<itens.lenght; i++) {
-            this.itens.push(itens);
-            this.quantidade++;
-        }
-
-        this.valorTotal += valor;
-        this.quantidadeTotal += quantidade;
-    }
-
-    removerItem(itens, quantidade, valor) {
-        for(let i=0; i<quantidade; i++) {
-            if(itens == this.itens[i]) {
-                this.itens.splice(i, 1);
-                this.quantidade--;
-                break;
+        for(let itensCarrinho in this.itens) {
+            if(this.itens[itensCarrinho].id == item.id) {
+                this.itens[itensCarrinho].quantidadeTotal += item.quantidade;
+                contador = 1;
             }
         }
 
-        this.valorTotal -= valor;        
+       if(contador == 0) {
+        this.itens.push(item);
+       }
+        
+        this.quantidadeTotal += item.quantidade;
+        this.valorTotal += item.preco * item.quantidade;
+    }
+
+    removerItem(item) {
+        for(let itensCarrinho in this.itens) {
+            if(this.itens[itensCarrinho].id == item.id) {
+                let obj = this.itens[itensCarrinho];
+                let index = this.itens.findIndex(function(obj) { return obj.id == item.id; });
+
+                this.quantidadeTotal -= obj.quantidade;
+                this.valorTotal -= obj.preco * obj.quantidade;
+                this.itens.splice(index,1);
+            }
+        }
     }
 }
 
@@ -67,7 +75,7 @@ let carrinho = new carrinhoDeCompras([
     nome: "Camiseta",
     quantidade: 2,
     preco: 150
-    } ,
+    },
     {
     codigo: 2,
     nome: "Calça",
@@ -79,21 +87,10 @@ let carrinho = new carrinhoDeCompras([
 
 console.log(carrinho);
 
-let itensAdicionados = [
-    {
-        codigo: 3,
-        nome: "Bermuda",
-        quantidade: 1,
-        preco: 120
-    }, 
-    {
-        codigo: 4,
-        nome: "Tênis",
-        quantidade: 1,
-        preco: 180
-    }
-]
+carrinho.adicionarItem({codigo: 3, nome: "Short", quantidade: 2, preco: 150});
 
-console.log("----------------------------");
-carrinho.adicionarItem(itensAdicionados, 2, 300);
+carrinho.adicionarItem({codigo: 3, nome: "Short", quantidade: 2, preco: 150});
+console.log(carrinho);
+
+carrinho.removerItem({codigo: 3, nome: "Short", quantidade: 2, preco: 150});
 console.log(carrinho);
