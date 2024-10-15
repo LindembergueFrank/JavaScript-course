@@ -104,10 +104,6 @@ class EnderecoCliente {
         this.cidade = cidade;
         this.estado = estado;
     }
-    
-    get EnderecoClienteFormatado() {
-        return `${this.rua}, ${this.bairro}, ${this.cidade} - ${this.estado}`;
-    }
 
     set newRua(newRua) {
         this.rua = newRua;
@@ -127,4 +123,9 @@ class EnderecoCliente {
 }
 
 let endereco = new EnderecoCliente("Rua dos Bobos", "Bairro do Meio", "São Paulo", "SP");
-console.log(endereco.EnderecoClienteFormatado());
+console.log(endereco);
+
+endereco.newRua = "Rua das Flores";
+endereco.newCidade = "Cidade Jardim";
+
+console.log(endereco);
