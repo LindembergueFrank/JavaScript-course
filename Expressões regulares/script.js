@@ -28,7 +28,7 @@ console.log(validaEmail.test('@email'));
 
 console.log("\n--------\n");
 
-const validaDataNascimento = /[0-9]{2}[/][0-9]{2}[/][0-9]{4}/;
+const validaDataNascimento = /[0-31]{2}[/][0-9]{2}[/][0-9]{4}/;
 
 console.log(validaDataNascimento.test('01/12/2000'));
 console.log(validaDataNascimento.test('2/12/2000'));
