@@ -46,3 +46,13 @@ const p3 = new Promise((resolve, reject) =>{
 });
 
 Promise.all([p1, p2, p3]).then((valores) => console.log(valores));
+
+console.log("\nAsync Functions");
+
+async function somaAsync(a, b) {
+    return a + b;
+}
+
+console.log(somaAsync(5, 3));
+
+somaAsync(5, 3).then((values) => console.log(values));
