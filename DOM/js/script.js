@@ -40,6 +40,29 @@ let pai = p.parentNode;
 
 pai.appendChild(newElement2);
 
+// Substituir elemento filho especificado por outro
+let heading = document.querySelector('#titulo-principal');
+let paiHeading = heading.parentNode;
 
+paiHeading.replaceChild(newElement2, heading);
+
+// Criando nós de texto
+let semTexto = document.querySelector('#sem-texto');
+let texto2 = document.createTextNode("Inserindo este texto");
+
+semTexto.appendChild(texto2);
+
+// Criando elementos com metodos do DOM
+let list = document.createElement("ul");
+
+for (let i = 1; i <= 5; i++) {
+    let itens = document.createElement("li");
+    let textoItens = document.createTextNode("Itens exemplares " + i);
+    itens.appendChild(textoItens);
+    list.appendChild(itens);
+}
+
+let container = document.getElementById("container-sub");
+container.appendChild(list);
 
  
