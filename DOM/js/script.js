@@ -65,4 +65,20 @@ for (let i = 1; i <= 5; i++) {
 let container = document.getElementById("container-sub");
 container.appendChild(list);
 
- 
+ // get e set Attribute
+let a = document.querySelector("footer a");
+
+console.log(a.getAttribute("href"));
+
+let link = 'https://www.google.com/';
+
+a.setAttribute("href", link);
+
+// altura e largura do elemento
+let teste = document.getElementById("subtitulo");
+
+console.log("Altura do elemento H2 com as bordas: " + teste.offsetHeight);
+console.log("Largura do elemento H2 com as bordas: " + teste.offsetWidth);
+console.log('-----------');
+console.log("Altura do elemento H2 sem as bordas: " + teste.clientHeight);
+console.log("Largura do elemento H2 sem as bordas: " + teste.clientWidth);
