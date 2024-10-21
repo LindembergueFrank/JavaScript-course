@@ -82,3 +82,11 @@ console.log("Largura do elemento H2 com as bordas: " + teste.offsetWidth);
 console.log('-----------');
 console.log("Altura do elemento H2 sem as bordas: " + teste.clientHeight);
 console.log("Largura do elemento H2 sem as bordas: " + teste.clientWidth);
+
+// Estilizando com JS
+teste.style.color = 'green';
+
+// Selecionar vários elementos com query
+let itens = document.querySelectorAll('.itens-amarelos');
+
+console.log(itens);
