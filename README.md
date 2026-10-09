@@ -29,6 +29,18 @@ Para avaliação de engenharia de software e projetos autorais, consulte os proj
 
 Cada diretório representa um tópico de estudo independente. Os exemplos podem ser executados conforme a necessidade diretamente no navegador ou com um ambiente JavaScript compatível, dependendo do conteúdo.
 
+## Executar um exemplo
+
+Escolha o diretório do assunto. Exemplos de DOM e eventos precisam de navegador e de sua página HTML associada; exemplos independentes podem ser executados com Node.js quando não utilizarem APIs do navegador.
+
+Para servir as páginas com Python 3, na raiz:
+
+```sh
+python -m http.server 8000 --bind 127.0.0.1
+```
+
+Abra http://127.0.0.1:8000 e navegue até o exercício. Não há um comando de build ou uma instalação única de dependências para toda a coleção.
+
 ## Princípios de manutenção
 
 - preservar o histórico de aprendizagem;
